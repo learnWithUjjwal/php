@@ -74,7 +74,19 @@ class SimpleClass{
 
 }
 
-$c2 = new SimpleClass;
-$c2->sum();
+SimpleClass::Sum();
+// $c2 = new SimpleClass;
+// $c2->sum();
 echo "<br>".$c2->var1;
 echo "<br>".$c2->var2;
+
+
+/////////////////////////////////////////////////////////////////////////////////
+
+// H.W.
+
+// with the help of array_map(), make a square of each element of an array.
+// show usage of use array_walk.
+// print only the numbers from this string $str = "5 is not 2 digits but 1 digit number"
+// write  a math class with the following method:
+// sum, subtract, multiply, divide, cube, square.
