@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Form</title>
+	 <meta charset="UTF-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<style type="text/css">
+		form input{
+			margin:5px;
+		}
+		#content{
+			border:1px solid black;
+			width:80%;
+			margin:auto;
+
+		}
+
+		#regis{
+			width:80%;
+			margin:auto;
+		}
+
+		header{
+			margin:2%;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<center><h1>जैसवाल जैन महासभा Registration Form</h1></center>
+	</header>
+	<div id="content">
+		<form id="regis" action="back1.php" method="post">
+			<input type="name" name="name" id="name" placeholder= "name"><br>
+			<input type="mobile" name="mobile" id="mobile" placeholder= "mobile"><br>
+			<input type="email" name="email" id="email" placeholder= "email"><br>
+			<input type="text" name="family_mem" id="fam_mem" placeholder= "Number of family members"><span id="tabNotice">{Press TAB to input the family members details}</span>
+			<input type="submit" name="submit" id="submit"><br>
+		</form>
+	</div>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script src="validation.js"></script>
+<script type="text/javascript">
+	jQuery('document').ready(function(){
+		$("#fam_mem").focusout(function(){
+			$('#tabNotice').hide();
+			console.log($(this).val());
+			if($(this).val()>0){
+			 $(this).attr("type", "hidden"); 
+			 	var num_fam = $(this).val();
+			var namehead = $('#name').val();
+			var mobilehead = $('#mobile').val();
+			var emailhead = $('#email').val();
+			var $input = $(`<input type="text" name="name0" placeholder= "name" value="${namehead}" id="name0"><input placeholder= "mobile" value="${mobilehead}" type="text" name="mob0" id="mob0"><input type="email" value="${emailhead}" placeholder= "email" name="email0"><input type="text" name="relation0" value="Self" placeholder= "Relationship"><br>`);
+				$("#regis").append($input);
+			for(var i = 1; i<num_fam; i++){
+
+				var $input = $(`<input type="text" name="name${i}" placeholder= "name" id="name${i}"><input placeholder= "mobile" type="text" name="mob${i}" id="mob${i}"><input type="email" placeholder= "email" name="email${i}"><input type="text" name="relation${i}" placeholder= "Relationship"><br>`);
+				$("#regis").append($input);
+			}
+			}
+		
+		})
+
+		$('#regis').validate({ // initialize the plugin
+        rules: {
+            'name': {
+                required: true,
+        
+            },
+            'mobile': {
+                required: true,
+                minlength: 5
+            },
+            'family_mem':{
+            	min:1
+            },
+
+        }
+    });
+
+
+	});
+</script>
+</body>
+</html>

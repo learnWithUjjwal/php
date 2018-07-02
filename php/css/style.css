@@ -1,0 +1,15 @@
+header{
+	background-color: lightgreen;
+}
+header ul li{
+	display: inline-block;
+	list-style-type: none;
+	padding:5px;
+	margin:5px;
+
+}
+
+header ul li a{
+	text-decoration: none;
+
+}
