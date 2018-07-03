@@ -18,8 +18,21 @@
 
 
 /////////////////////////////////////////////////////
-// array_walk(array, callback(&$var1, $var2))
+// array_walk(array, callback(&$var1, $var2)). array should be passed through a variable since only array refernece is allowed.
+
 $arr = ["PHP", "Javascript", "5"];
 array_walk($arr, function($v, $k){
 	echo $k."=>".$v."<br>";
 });
+
+/////////////////////////////////////////////////////////////////
+// HW
+
+// Create a registration form and display its results in a table.
+// What is a cookie? 
+// In the Maths class add a new method called factorial & implement the same using recursion.
+// Create a class DatabaseHandler with the following methods implementation:
+// a-> Open connection 
+// b-> Insert Data
+// c-> Select Data
+// d-> Close connection
