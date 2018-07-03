@@ -1,10 +1,10 @@
 <!-- print only the numbers from this string $str = "5 is not 2 digits but 1 digit number" -->
 <?php
-$str = "53is not 2 digits13246 but 1 digit number";
+$str = "53is not 2 digits13246 but 1 digit num132454654ber";
 $arr1 = explode(' ', $str);
 foreach($arr1 as $word){
     
-    echo checkdigit($word);
+    echo checkDigit($word);
 }    
 
 function checkDigit($arr){
