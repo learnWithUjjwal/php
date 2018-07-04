@@ -6,6 +6,7 @@
     class Maths{
     public $n1;
     public $n2;
+    public $fact;
     public function __construct($n1, $n2){
         $this->n1 = $n1;
         $this->n2 = $n2;
@@ -41,11 +42,19 @@
         public function sqr($num){
             return $num * $num;
         }
+        public function fact($num){
+            if($num==1){
+                return 1;
+            }
+            return $num * $this->fact($num-1);
+
+        }
     }
     echo Maths::class;
 
 
 
-// $c1 = new Maths(1,3);
+$c1 = new Maths(1,3);
 // echo $c1->sum()."<br>";
 // echo $c1->cube(3);
+echo $c1->fact(5);
