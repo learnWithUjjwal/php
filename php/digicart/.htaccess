@@ -1,0 +1,3 @@
+RewriteBase /
+RewriteRule /about index.php?controller=PageController&method=about
+RewriteRule / index.php?controller=PageController&method=index
