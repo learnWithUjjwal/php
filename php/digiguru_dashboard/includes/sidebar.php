@@ -61,7 +61,7 @@ foreach($results as $result)
                         
                   
                     <form name="attendance" method="GET">
-	<input type="submit" name="attendance">
+	<input type="submit" name="attendance" value="Mark The Attendance">
 	
 </form>
 
@@ -71,7 +71,7 @@ foreach($results as $result)
                   <?= $lastid ?>
                     <form action="includes/logout.php" method="POST">
                         <input type="hidden" name="lastid" value="<?= $lastid ?>">
-	<input type="submit" name="logout">
+	<input type="submit" name="logout" value="LOGOUT">
 	
 </form>
 
