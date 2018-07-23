@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		login page
+	</title>
+</head>
+<body>
+	<?php 
+		
+		$b = $last_id;
+	?>
+	<form action="logout.php" method="POST">
+		
+		<input type="hidden" name="lastid" value="<?= $b ?>">
+		<input type="submit" name="logout">
+		
+	</form>
+
+</body>
+</html>
+
+<!-- SQL QUERY
+SELECT TIMEDIFF(logout, login) FROM userlog WHERE id = 15
+ -->
